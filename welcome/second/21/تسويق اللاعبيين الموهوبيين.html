@@ -222,22 +222,34 @@
                         <h3>فيديو تحفيزي</h3>
 
                         <div class="service-dtls1-item">
-                            <video src="../../../vidoes/v4.mp4" width="620" height="540" controls></video>
+                            <video id="video1" controls width="620" height="540">
+                                <source src="../../../vidoes/v4.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
 
                         <div class="service-dtls-title">
                             <h3>مهارات بعض اللاعبين</h3>
 
                             <div class="service-dtls-item">
-                                <video src="../../../vidoes/v1.mp4" width="320" height="240" controls></video>
+                                <video id="video2" controls width="320" height="240">
+                                    <source src="../../../vidoes/v1.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
 
                             <div class="service-dtls-item">
-                                <video src="../../../vidoes/v2.mp4" width="320" height="240" controls></video>
+                                <video id="video3" controls width="320" height="240">
+                                    <source src="../../../vidoes/v2.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
 
                             <div class="service-dtls-item">
-                                <video src="../../../vidoes/v3.mp4" width="320" height="240" controls></video>
+                                <video id="video4" controls width="320" height="240">
+                                    <source src="../../../vidoes/v3.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
                         </div>
                     </div>
@@ -310,6 +322,17 @@
             }
 
         </script>
+
+        <script>
+            $(document).ready(function () {
+                $('video').on('play', function () {
+                    $('video').not(this).each(function (index, other) {
+                        other.pause();
+                    });
+                });
+            });
+        </script>
+
 </body>
 
 </html>
